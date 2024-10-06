@@ -14,12 +14,22 @@
 :root {
     --gallery-height: 0;
 }
+#bg-video {
+    position: fixed; /* Keep the video fixed in the background */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover full width */
+    height: 100%; /* Cover full height */
+    object-fit: cover; /* Maintain aspect ratio */
+    z-index: -1; /* Send the video behind other elements */
+}
+
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #0e0d0dfd;
     color: gold;
-    background-image: url(images/bg2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -165,6 +175,71 @@ header p {
     margin: auto;
 }
 
+
+/*----------------------------How its Done---------------------------------*/
+
+/* How It's Done Section */
+.HowItsDone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 20px;
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.steps_panel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align each step to the left */
+    gap: 20px;
+}
+
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 100%; /* Make sure it spans the available space */
+}
+
+.step:hover {
+    transform: scale(1.05);
+}
+
+.step .image_icone {
+    display: flex;
+    justify-content: flex-start; /* Align the image to the left */
+    margin-right: 15px; /* Add some space between image and text */
+}
+
+.step .image img {
+    width: 100%;
+    max-width: 150px; /* Keep the image size compact */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.step .step_num {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fbc904fd;
+    display: block;
+    width: 100%;
+}
+
+.step .discrbtion {
+    font-size: 1rem;
+    color: aliceblue;
+    margin-top: 10px;
+    display: block;
+}
+
+
 /*----------------------------INTRO QUOTE---------------------------------*/
 .intro_quote {
     margin: 3rem 1rem;
@@ -256,14 +331,90 @@ header p {
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
     cursor: pointer;
 }
-.footer_socials i {
-    color: white;
+/* About Us Section */
+.about {
+    padding: 2rem 0;
+    background-color: rgba(0, 0, 0, 0.1); /* Dark background for contrast */
+    backdrop-filter: blur(1px);
+    text-align: center;
 }
+
+.about h2 {
+    font-size: 2.5rem;
+    color: gold; /* Gold color for the heading */
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    color: aliceblue; /* Light blue text for readability */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the text */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: rgba(0, 0, 0, 0.3); /* Dark background for contrast */
+    backdrop-filter: blur(1px);
+    padding: 2rem 0;
+    color: aliceblue; /* Light text for readability */
+}
+
+.footer_container {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between;
+    max-width: 1200px; /* Limit width for better layout */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.footer_1, .footer_2, .footer_3, .footer_4 {
+    flex: 1; /* Each section takes equal space */
+    padding: 0 1rem;
+}
+
+.footer_2 h4, .footer_3 h4, .footer_4 h4 {
+    color: gold; /* Gold color for subheadings */
+}
+
+.footer_2 ul, .footer_3 ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+}
+
+.footer_2 li, .footer_3 li {
+    margin: 0.5rem 0; /* Space between list items */
+}
+
+.footer_2 a, .footer_3 a {
+    color: aliceblue; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer_2 a:hover, .footer_3 a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}
+
 .footer_socials {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Vertically center the icons */
+    display: flex; /* Flexbox for social icons */
+    list-style: none; /* Remove default list styles */
+    padding: 0;
 }
 
 .footer_socials li {
-    margin-right: 10px; 
+    margin-right: 1rem; /* Space between icons */
+}
+
+.footer_socials a {
+    color: aliceblue; /* Icon color */
+    font-size: 1.5rem; /* Size of icons */
+}
+
+.footer_copyright {
+    text-align: center; /* Center copyright text */
+    padding: 1rem 0;
+    color: gold; /* Gold color for copyright */
+}
+
+.footer_copyright small {
+    display: block; /* Display copyright as block for spacing */
 }
